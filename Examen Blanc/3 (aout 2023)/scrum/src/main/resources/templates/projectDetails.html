@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr" layout:decorate="~{layout}" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <title layout:fragment="title" th:text="${project.name}">Détails du projet</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+
+        <div class="container">
+            <div class="page-header">
+                <h1 class="display-4" th:text="${project.name}">(Pas de projet)</h1>
+            </div>
+            <div th:if="${#lists.isEmpty(stories)}">
+                <p>Aucune story trouvée.</p>
+            </div>
+            <div th:unless="${#lists.isEmpty(stories)}">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titre de la story</th>
+                            <th>Numéro de l'itération</th>
+                            <th>Nombre de points estimés de l'histoire</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="story : ${stories}">
+                            <td th:text="${story.title}"></td>
+                            <td th:text="${story.sprint.number}"></td>
+                            <td th:text="${story.estimate}"></td>
+                        </tr>
+                    <tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-primary" th:if="${project.active == true}"
+                sec:authorize="hasRole('ROLE_ADMIN')"
+                th:onclick="'window.location.href=\'' + @{/projects/{name}/details/newStory(name=${project.name})} + '\''">
+                Créer une story
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>

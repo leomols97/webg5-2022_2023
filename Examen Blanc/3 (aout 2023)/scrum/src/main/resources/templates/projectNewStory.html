@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" layout:decorate="~{layout}">
+
+<head>
+    <title layout:fragment="title" th:text="${project.name}">Détails du projet</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+
+        <div class="container">
+            <div class="page-header">
+                <h1 class="display-4" th:text="${project.name}">(Pas de projet)</h1>
+            </div>
+            <div>
+                <!-- Les | permettent de concaténer des chaînes de caractères -->
+                <form th:action="@{|/projects/${project.name}/details/newStory|}" th:object="${story}" method="POST"
+                    novalidate>
+                    <div class="mb-3">
+                        <div class="form">
+                            <label for="title">Titre de la story</label>
+                            <input type="text" class="form-control" th:field="*{title}" th:errorclass="errorField" />
+                            <div class="text-danger" th:errors="*{title}"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form">
+                            <label for="estimate">Nombre de points estimés de l'histoire</label>
+                            <input type="number" class="form-control" id="estimate" th:field="*{estimate}" required>
+                            <div class="text-danger" th:errors="*{estimate}"></div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Créer la story</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

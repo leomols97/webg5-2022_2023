@@ -1,0 +1,12 @@
+be/he2b/scrum/model/Sprint.class
+be/he2b/scrum/ScrumApplication.class
+be/he2b/scrum/DTOS/ProjectDTO.class
+be/he2b/scrum/web/ProjectController.class
+be/he2b/scrum/rest/RestController.class
+be/he2b/scrum/repository/StoryRepository.class
+be/he2b/scrum/business/ScrumService.class
+be/he2b/scrum/model/Project.class
+be/he2b/scrum/repository/ProjectRepository.class
+be/he2b/scrum/model/Users.class
+be/he2b/scrum/model/Story.class
+be/he2b/scrum/model/Authorities.class

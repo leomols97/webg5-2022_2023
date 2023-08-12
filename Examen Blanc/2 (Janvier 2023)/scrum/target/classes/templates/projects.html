@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr" layout:decorate="~{layout}">
+
+<head>
+    <title layout:fragment="title">Index de la gestion des dépôts</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+
+        <div class="container">
+            <div class="page-header">
+                <table class="table">
+                    <td>Nom du projet</td>
+                    <td>Nombre de sprints</td>
+                    <td>Statut du projet</td>
+                    <tr th:each="project : ${projects}">
+                        <td><a th:href="@{'/projects/project/' + ${project.name}}" th:text="${project.name}">Nom du
+                                projet</a>
+                        </td>
+                        <td th:text="${project.sprints.size}">Nombre de sprints</td>
+                        <td th:text="${project.active} ? 'En cours' : 'Terminé'">Statut du projet</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

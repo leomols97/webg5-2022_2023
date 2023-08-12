@@ -1,0 +1,26 @@
+<h1>Espace privé</h1>
+<a th:href="@{/}">Retour à l’espace public</a>
+
+
+
+<!DOCTYPE html>
+<html lang="fr" layout:decorate="~{layout}">
+
+<head>
+    <title layout:fragment="title" th:text="${project.name}">Détails du projet</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+
+        <div class="container">
+            <div class="page-header">
+                <h1 class="display-4" th:text="${project.name}">(Pas de projet)</h1>
+            </div>
+            <h1>Espace privé</h1>
+            <a th:href="@{/}">Retour à l’espace public</a>
+        </div>
+    </main>
+</body>
+
+</html>

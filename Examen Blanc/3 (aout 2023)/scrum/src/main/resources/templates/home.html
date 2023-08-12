@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" layout:decorate="~{layout}">
+
+<head>
+    <title layout:fragment="title">Index de la gestion des dépôts</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+
+        <div class="container">
+            <div class="page-header">
+                <h1 class="display-4">Bienvenue sur Scrum-ESI</h1>
+            </div>
+            <div th:if="${#lists.isEmpty(projectsList)}">
+                <p>Aucun projet trouvé.</p>
+            </div>
+            <div th:unless="${#lists.isEmpty(projectsList)}">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Projet</th>
+                            <th>Nombre de sprints</th>
+                            <th>Etat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="project : ${projectsList}">
+                            <td>
+                                <a th:href="@{/projects/{name}/details(name=${project.name})}"
+                                    th:text="${project.name}">Accéder au projet</a>
+                            </td>
+                            <td th:text="${#lists.size(project.sprints)}"></td>
+                            <td th:text="${project.active ? 'En cours' : 'Terminé'}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

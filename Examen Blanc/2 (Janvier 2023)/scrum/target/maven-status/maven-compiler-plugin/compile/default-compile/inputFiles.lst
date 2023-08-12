@@ -1,0 +1,13 @@
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/security/SecurityConfig.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/model/Project.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/rest/RestController.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/web/ProjectController.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/DTOS/ProjectDTO.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/ScrumApplication.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/model/Authorities.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/model/Sprint.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/model/Story.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/repository/ProjectRepository.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/repository/StoryRepository.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/model/Users.java
+/Users/leopoldmols/Desktop/ESI/3emeB/Q1/WEBG5/Examen Blanc/scrum/src/main/java/be/he2b/scrum/business/ScrumService.java

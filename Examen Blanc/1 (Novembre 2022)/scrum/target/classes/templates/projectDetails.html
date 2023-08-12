@@ -1,0 +1,58 @@
+<html lang="fr" layout:decorate="~{layout}">
+
+<head th:replace="~{layout.html::head(titre='Détails du projet')}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body bgcolor="FFFFFF">
+    <main layout:fragment="content">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="page-header">
+                <table class="table">
+                    <tr th:each="project : ${projects}">
+                        <h2 th:text="${project.projectName}">Nom du projet</h2>
+                    </tr>
+                    <td>Numéro de l'itération</td>
+                    <td>Nombre de points estimés</td>
+                    <tr th:each="story : ${stories}">
+                        <div th:if="${stories.size == 0}">
+                            <div>Il n'y a pas de story dans ce sprint !</div>
+                        </div>
+                        <div th:unless="${stories.size == 0}">
+                            <td th:text="${story.sprint.number}">Numéro de l'itération</td>
+                            <td th:text="${story.estimate}">Nombre de points estimés</td>
+                        </div>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h5 class="text-3xl underline grid grid-cols-3 gap-4">
+            <div></div>
+            <div>
+                Ajouter un cours
+            </div>
+        </h5>
+        <form th:action="@{/addStory}" th:object="${story}" method="post" class="grid grid-cols-3 gap-4">
+            <div></div>
+            <div>
+                <div class="form-group">
+                    Titre de la story : <input type="text" th:field="*{title}" class="form-control" /></div>
+                <span th:errors="*{title}" class="text-danger invalid-feedback">erreur</span>
+                <div class="form-group">
+                    Nombre de points estimés : <input type="text" th:field="*{estimate}" class="form-control" /></div>
+                <span th:errors="*{id}" class="text-danger invalid-feedback">erreur</span>
+                <button type="submit">Ajouter</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+<footer>
+
+</footer>
+
+</html>
